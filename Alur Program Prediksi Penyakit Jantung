@@ -1,0 +1,22 @@
+# Inisialisasi 
+  Pada tahap awal, sistem menyiapkan "blueprint" atau kerangka kerja sebelum data diproses:
+    1. Mendefinisikan lokasi file dataset (/content/drive/MyDrive/ML/heart.csv).
+    2. Membuat objek dari kelas-kelas utama: BaseDataset, HeartDiseaseEDA, dan HeartDiseasePipeline.
+
+# Fase Penanganan Data (Data Handling)
+  Di sinilah data mentah diolah menjadi data yang bersih:
+    1. Loading: Membaca dataset CSV ke dalam format DataFrame Pandas.
+    2. Cleaning: Mencari dan menghapus baris yang memiliki nilai kosong (null) khususnya pada kolom ca dan thal.
+    3. Refining: Mengubah nama kolom yang singkat menjadi nama yang lebih deskriptif agar mudah dibaca (contoh: cp menjadi chest_pain_type).
+    4. Encoding: Mengubah label target (0 dan 1) menjadi kategori tekstual (no_disease dan has_disease).
+
+# Fase Analisis (EDA - Exploratory Data Analysis)
+  Setelah data bersih, program melakukan analisis untuk memahami karakteristik data:
+    1. Statistik Deskriptif: Menghitung rata-rata, nilai tengah, dan persebaran data numerik.
+    2. Distribusi Target: Melihat perbandingan jumlah pasien yang sehat vs pasien yang terindikasi penyakit jantung.
+    3. Visualisasi Fitur: Membuat grafik untuk melihat pola pada fitur kunci seperti kadar kolesterol, usia, dan detak jantung maksimal.
+
+# Eksekusi Akhir (Pipeline Execution)
+  Fase ini adalah penggerak utama yang membungkus semua langkah di atas:
+    1. Program menggunakan blok try-except untuk memastikan jika file tidak ditemukan, program akan memberikan peringatan dan berhenti secara aman.
+    2. Menampilkan laporan ringkasan di konsol bahwa seluruh tahapan telah selesai dijalankan dengan sukses.
